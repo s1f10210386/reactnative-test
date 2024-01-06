@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import MapView from './components/MapView.tsx';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -74,28 +75,29 @@ function App(): React.JSX.Element {
     console.log('DEFAULT_EVENT', DEFAULT_EVENT_NAME);
   };
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Button
-            title="Click to invoke your native module!"
-            color="#841584"
-            onPress={onPress}
-          />
+    // <SafeAreaView style={backgroundStyle}>
+    //   <ScrollView
+    //     contentInsetAdjustmentBehavior="automatic"
+    //     style={backgroundStyle}>
+    //     <View
+    //       style={{
+    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
+    //       }}>
+    //       <Button
+    //         title="Click to invoke your native module!"
+    //         color="#841584"
+    //         onPress={onPress}
+    //       />
 
-          <Button
-            title="Click to invoke your native module!"
-            color="#841584"
-            onPress={onPress2}
-          />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    //       <Button
+    //         title="Click to invoke your native module!"
+    //         color="#841584"
+    //         onPress={onPress2}
+    //       />
+    //     </View>
+    //   </ScrollView>
+    // </SafeAreaView>
+    <MapView style={{flex: 1}} />
   );
 }
 
